@@ -9,23 +9,37 @@
 /* Begin PBXBuildFile section */
 		C2B66067299BDBA500BD47D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B66066299BDBA500BD47D4 /* AppDelegate.swift */; };
 		C2B66069299BDBA500BD47D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B66068299BDBA500BD47D4 /* SceneDelegate.swift */; };
-		C2B6606B299BDBA500BD47D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B6606A299BDBA500BD47D4 /* ViewController.swift */; };
-		C2B6606E299BDBA500BD47D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B6606C299BDBA500BD47D4 /* Main.storyboard */; };
+		C2B6606B299BDBA500BD47D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B6606A299BDBA500BD47D4 /* MainViewController.swift */; };
 		C2B66071299BDBA500BD47D4 /* SpaceX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2B6606F299BDBA500BD47D4 /* SpaceX.xcdatamodeld */; };
 		C2B66073299BDBA600BD47D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B66072299BDBA600BD47D4 /* Assets.xcassets */; };
 		C2B66076299BDBA600BD47D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B66074299BDBA600BD47D4 /* LaunchScreen.storyboard */; };
+		C2E885C4299E1E0E00ED8E2B /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E885C3299E1E0E00ED8E2B /* MainModel.swift */; };
+		C2E885C6299E1E1900ED8E2B /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E885C5299E1E1900ED8E2B /* DetailModel.swift */; };
+		C2E885C8299E3A1000ED8E2B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E885C7299E3A1000ED8E2B /* ApiClient.swift */; };
+		C2F16947299D2F8B00ED0187 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F16946299D2F8B00ED0187 /* MainViewModel.swift */; };
+		C2F16949299D2FC900ED0187 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F16948299D2FC900ED0187 /* DetailViewController.swift */; };
+		C2F1694B299D2FDE00ED0187 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1694A299D2FDE00ED0187 /* DetailViewModel.swift */; };
+		D99E95E0D5CF3DEDFC0217BB /* Pods_SpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA6B52B8CBA8800C9D605EF /* Pods_SpaceX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84D2D4CF616E93D89A9C2981 /* Pods-SpaceX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX.debug.xcconfig"; path = "Target Support Files/Pods-SpaceX/Pods-SpaceX.debug.xcconfig"; sourceTree = "<group>"; };
+		9DD171CD96F742E06BB564D2 /* Pods-SpaceX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX.release.xcconfig"; path = "Target Support Files/Pods-SpaceX/Pods-SpaceX.release.xcconfig"; sourceTree = "<group>"; };
 		C2B66063299BDBA500BD47D4 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B66066299BDBA500BD47D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2B66068299BDBA500BD47D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C2B6606A299BDBA500BD47D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C2B6606D299BDBA500BD47D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C2B6606A299BDBA500BD47D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C2B66070299BDBA500BD47D4 /* SpaceX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaceX.xcdatamodel; sourceTree = "<group>"; };
 		C2B66072299BDBA600BD47D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2B66075299BDBA600BD47D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2B66077299BDBA600BD47D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2E885C3299E1E0E00ED8E2B /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		C2E885C5299E1E1900ED8E2B /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		C2E885C7299E3A1000ED8E2B /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		C2F16946299D2F8B00ED0187 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		C2F16948299D2FC900ED0187 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C2F1694A299D2FDE00ED0187 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		DEA6B52B8CBA8800C9D605EF /* Pods_SpaceX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D99E95E0D5CF3DEDFC0217BB /* Pods_SpaceX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D45273BA494E08BF70F1406 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84D2D4CF616E93D89A9C2981 /* Pods-SpaceX.debug.xcconfig */,
+				9DD171CD96F742E06BB564D2 /* Pods-SpaceX.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		42FC4390287E3FBD610180F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEA6B52B8CBA8800C9D605EF /* Pods_SpaceX.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C2B6605A299BDBA500BD47D4 = {
 			isa = PBXGroup;
 			children = (
 				C2B66065299BDBA500BD47D4 /* SpaceX */,
 				C2B66064299BDBA500BD47D4 /* Products */,
+				2D45273BA494E08BF70F1406 /* Pods */,
+				42FC4390287E3FBD610180F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +93,77 @@
 		C2B66065299BDBA500BD47D4 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
-				C2B66066299BDBA500BD47D4 /* AppDelegate.swift */,
-				C2B66068299BDBA500BD47D4 /* SceneDelegate.swift */,
-				C2B6606A299BDBA500BD47D4 /* ViewController.swift */,
-				C2B6606C299BDBA500BD47D4 /* Main.storyboard */,
-				C2B66072299BDBA600BD47D4 /* Assets.xcassets */,
+				C2F16940299D2E2100ED0187 /* Src */,
 				C2B66074299BDBA600BD47D4 /* LaunchScreen.storyboard */,
 				C2B66077299BDBA600BD47D4 /* Info.plist */,
 				C2B6606F299BDBA500BD47D4 /* SpaceX.xcdatamodeld */,
 			);
 			path = SpaceX;
+			sourceTree = "<group>";
+		};
+		C2F16940299D2E2100ED0187 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				C2F16941299D2E2A00ED0187 /* Scenes */,
+				C2F1694C299D300A00ED0187 /* Models */,
+				C2F16942299D2E3100ED0187 /* Resources */,
+				C2F16945299D2F1800ED0187 /* Services */,
+				C2B66066299BDBA500BD47D4 /* AppDelegate.swift */,
+				C2B66068299BDBA500BD47D4 /* SceneDelegate.swift */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		C2F16941299D2E2A00ED0187 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C2F16943299D2E9E00ED0187 /* MainScene */,
+				C2F16944299D2EA700ED0187 /* DetailScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C2F16942299D2E3100ED0187 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C2B66072299BDBA600BD47D4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C2F16943299D2E9E00ED0187 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				C2B6606A299BDBA500BD47D4 /* MainViewController.swift */,
+				C2F16946299D2F8B00ED0187 /* MainViewModel.swift */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		C2F16944299D2EA700ED0187 /* DetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				C2F16948299D2FC900ED0187 /* DetailViewController.swift */,
+				C2F1694A299D2FDE00ED0187 /* DetailViewModel.swift */,
+			);
+			path = DetailScene;
+			sourceTree = "<group>";
+		};
+		C2F16945299D2F1800ED0187 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C2E885C7299E3A1000ED8E2B /* ApiClient.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C2F1694C299D300A00ED0187 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C2E885C3299E1E0E00ED8E2B /* MainModel.swift */,
+				C2E885C5299E1E1900ED8E2B /* DetailModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2B6607A299BDBA600BD47D4 /* Build configuration list for PBXNativeTarget "SpaceX" */;
 			buildPhases = (
+				28B45B5ABE80449E45F2E565 /* [CP] Check Pods Manifest.lock */,
 				C2B6605F299BDBA500BD47D4 /* Sources */,
 				C2B66060299BDBA500BD47D4 /* Frameworks */,
 				C2B66061299BDBA500BD47D4 /* Resources */,
+				F2DC2702F667FF21443B415B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,35 +228,74 @@
 			files = (
 				C2B66076299BDBA600BD47D4 /* LaunchScreen.storyboard in Resources */,
 				C2B66073299BDBA600BD47D4 /* Assets.xcassets in Resources */,
-				C2B6606E299BDBA500BD47D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28B45B5ABE80449E45F2E565 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpaceX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2DC2702F667FF21443B415B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpaceX/Pods-SpaceX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpaceX/Pods-SpaceX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpaceX/Pods-SpaceX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C2B6605F299BDBA500BD47D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2B6606B299BDBA500BD47D4 /* ViewController.swift in Sources */,
+				C2E885C4299E1E0E00ED8E2B /* MainModel.swift in Sources */,
+				C2F16947299D2F8B00ED0187 /* MainViewModel.swift in Sources */,
+				C2B6606B299BDBA500BD47D4 /* MainViewController.swift in Sources */,
+				C2E885C6299E1E1900ED8E2B /* DetailModel.swift in Sources */,
+				C2F1694B299D2FDE00ED0187 /* DetailViewModel.swift in Sources */,
 				C2B66067299BDBA500BD47D4 /* AppDelegate.swift in Sources */,
+				C2F16949299D2FC900ED0187 /* DetailViewController.swift in Sources */,
 				C2B66069299BDBA500BD47D4 /* SceneDelegate.swift in Sources */,
 				C2B66071299BDBA500BD47D4 /* SpaceX.xcdatamodeld in Sources */,
+				C2E885C8299E3A1000ED8E2B /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C2B6606C299BDBA500BD47D4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C2B6606D299BDBA500BD47D4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C2B66074299BDBA600BD47D4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -220,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,6 +423,7 @@
 		};
 		C2B6607B299BDBA600BD47D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84D2D4CF616E93D89A9C2981 /* Pods-SpaceX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -296,9 +434,9 @@
 				INFOPLIST_FILE = SpaceX/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,6 +452,7 @@
 		};
 		C2B6607C299BDBA600BD47D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DD171CD96F742E06BB564D2 /* Pods-SpaceX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -324,9 +463,9 @@
 				INFOPLIST_FILE = SpaceX/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
