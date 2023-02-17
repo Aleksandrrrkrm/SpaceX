@@ -10,20 +10,20 @@ import Moya
 
 protocol MainViewModelProtocol {
     
-    var updateViewData: ((LaunchModel)->())? { get set }
+    var updateViewData: ((Main)->())? { get set }
     func viewDidLoad()
 }
 
 final class MainViewModel: MainViewModelProtocol {
     
-    public var updateViewData: ((LaunchModel) -> ())?
+    public var updateViewData: ((Main) -> ())?
     
     private let provider = MoyaProvider<ApiClient>()
     private var currentPage = 1
-    var jsonData: [SpaceXLaunchV4Doc] = []
+    var jsonData: [LaunchDoc] = []
     
     init() {
-//        updateViewData?(.initial)
+        updateViewData?(.initial)
     }
     
     public func viewDidLoad() {
