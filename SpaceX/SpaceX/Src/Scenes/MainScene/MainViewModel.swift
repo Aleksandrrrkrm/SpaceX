@@ -10,20 +10,20 @@ import Moya
 
 protocol MainViewModelProtocol {
     
-    var updateViewData: ((Main)->())? { get set }
+    var updateViewData: ((LaunchModel)->())? { get set }
     func viewDidLoad()
 }
 
 final class MainViewModel: MainViewModelProtocol {
     
-    public var updateViewData: ((Main) -> ())?
+    public var updateViewData: ((LaunchModel) -> ())?
     
     private let provider = MoyaProvider<ApiClient>()
     private var currentPage = 1
-    var jsonData: [Main.LaunchModel]?
+    var jsonData: [SpaceXLaunchV4Doc] = []
     
     init() {
-        updateViewData?(.initial)
+//        updateViewData?(.initial)
     }
     
     public func viewDidLoad() {
@@ -36,9 +36,15 @@ final class MainViewModel: MainViewModelProtocol {
             case let .success(response):
                 let data = response.data
                 let statusCode = response.statusCode
-                print(statusCode, data.count)
-                let launchModel = try? JSONDecoder().decode(Main.LaunchModel.self, from: data)
-                print(response.response)
+                print(statusCode)
+                let launchModel = try? JSONDecoder().decode(LaunchModel.self, from: data)
+                guard let docs = launchModel?.docs else {
+                    return
+                }
+                docs.forEach { item in
+                    self.jsonData.append(item)
+                }
+                print(self.jsonData.count, self.jsonData.first?.name, self.jsonData.first?.cores?.first?.flight, self.jsonData.first?.success)
             case let .failure(error):
                 print(error.localizedDescription)
             }

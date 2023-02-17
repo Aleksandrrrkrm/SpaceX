@@ -21,7 +21,7 @@ extension ApiClient: TargetType {
     var path: String {
         switch self {
         case .getData:
-            return "/v4/launches"
+            return "/v4/launches/query"
         case .getDetailInfo(let id):
             return "/v4/launches/:\(id)"
         }
@@ -30,22 +30,22 @@ extension ApiClient: TargetType {
     var method: Method {
         switch self {
         case .getData, .getDetailInfo:
-            return .get
+            return .post
         }
     }
     
     var task: Task {
         switch self {
-         case .getDetailInfo, .getData:
-             return .requestPlain
-         }
+        case .getDetailInfo:
+            return .requestPlain
+        case .getData(let page):
+            return .requestParameters(parameters: ["limit": 10, "page": page], encoding: JSONEncoding.default)
+        }
     }
     
     var headers: [String : String]? {
         return ["Content-type": "application/json"]
     }
-    
-    
 }
 
 private extension String {
