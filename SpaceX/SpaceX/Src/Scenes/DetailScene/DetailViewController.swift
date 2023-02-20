@@ -9,10 +9,12 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var detailModel: DetailViewModelProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .gray
     }
     
     

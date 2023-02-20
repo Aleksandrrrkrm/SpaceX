@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C25BA60C29A3BB7400467E36 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25BA60B29A3BB7400467E36 /* MainTableViewCell.swift */; };
+		C29AE0A529A2332900BD04E9 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29AE0A429A2332900BD04E9 /* BaseCoordinator.swift */; };
 		C2B66067299BDBA500BD47D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B66066299BDBA500BD47D4 /* AppDelegate.swift */; };
-		C2B66069299BDBA500BD47D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B66068299BDBA500BD47D4 /* SceneDelegate.swift */; };
 		C2B6606B299BDBA500BD47D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B6606A299BDBA500BD47D4 /* MainViewController.swift */; };
 		C2B66071299BDBA500BD47D4 /* SpaceX.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C2B6606F299BDBA500BD47D4 /* SpaceX.xcdatamodeld */; };
 		C2B66073299BDBA600BD47D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2B66072299BDBA600BD47D4 /* Assets.xcassets */; };
@@ -25,9 +26,10 @@
 /* Begin PBXFileReference section */
 		84D2D4CF616E93D89A9C2981 /* Pods-SpaceX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX.debug.xcconfig"; path = "Target Support Files/Pods-SpaceX/Pods-SpaceX.debug.xcconfig"; sourceTree = "<group>"; };
 		9DD171CD96F742E06BB564D2 /* Pods-SpaceX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX.release.xcconfig"; path = "Target Support Files/Pods-SpaceX/Pods-SpaceX.release.xcconfig"; sourceTree = "<group>"; };
+		C25BA60B29A3BB7400467E36 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		C29AE0A429A2332900BD04E9 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		C2B66063299BDBA500BD47D4 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B66066299BDBA500BD47D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C2B66068299BDBA500BD47D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C2B6606A299BDBA500BD47D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C2B66070299BDBA500BD47D4 /* SpaceX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpaceX.xcdatamodel; sourceTree = "<group>"; };
 		C2B66072299BDBA600BD47D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +62,6 @@
 				84D2D4CF616E93D89A9C2981 /* Pods-SpaceX.debug.xcconfig */,
 				9DD171CD96F742E06BB564D2 /* Pods-SpaceX.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -70,6 +71,22 @@
 				DEA6B52B8CBA8800C9D605EF /* Pods_SpaceX.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C25BA60A29A3BB5700467E36 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C25BA60B29A3BB7400467E36 /* MainTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C29AE0A329A230B100BD04E9 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				C29AE0A429A2332900BD04E9 /* BaseCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		C2B6605A299BDBA500BD47D4 = {
@@ -109,7 +126,6 @@
 				C2F16942299D2E3100ED0187 /* Resources */,
 				C2F16945299D2F1800ED0187 /* Services */,
 				C2B66066299BDBA500BD47D4 /* AppDelegate.swift */,
-				C2B66068299BDBA500BD47D4 /* SceneDelegate.swift */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -117,6 +133,7 @@
 		C2F16941299D2E2A00ED0187 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C29AE0A329A230B100BD04E9 /* Coordinators */,
 				C2F16943299D2E9E00ED0187 /* MainScene */,
 				C2F16944299D2EA700ED0187 /* DetailScene */,
 			);
@@ -134,6 +151,7 @@
 		C2F16943299D2E9E00ED0187 /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
+				C25BA60A29A3BB5700467E36 /* Cell */,
 				C2B6606A299BDBA500BD47D4 /* MainViewController.swift */,
 				C2F16946299D2F8B00ED0187 /* MainViewModel.swift */,
 			);
@@ -280,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25BA60C29A3BB7400467E36 /* MainTableViewCell.swift in Sources */,
 				C2E885C4299E1E0E00ED8E2B /* MainModel.swift in Sources */,
 				C2F16947299D2F8B00ED0187 /* MainViewModel.swift in Sources */,
 				C2B6606B299BDBA500BD47D4 /* MainViewController.swift in Sources */,
@@ -287,8 +306,8 @@
 				C2F1694B299D2FDE00ED0187 /* DetailViewModel.swift in Sources */,
 				C2B66067299BDBA500BD47D4 /* AppDelegate.swift in Sources */,
 				C2F16949299D2FC900ED0187 /* DetailViewController.swift in Sources */,
-				C2B66069299BDBA500BD47D4 /* SceneDelegate.swift in Sources */,
 				C2B66071299BDBA500BD47D4 /* SpaceX.xcdatamodeld in Sources */,
+				C29AE0A529A2332900BD04E9 /* BaseCoordinator.swift in Sources */,
 				C2E885C8299E3A1000ED8E2B /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -411,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -436,7 +455,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,7 +484,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

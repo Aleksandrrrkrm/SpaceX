@@ -4,19 +4,23 @@ PODS:
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
+  - SteviaLayout (5.1.2)
 
 DEPENDENCIES:
   - Moya (~> 15.0)
+  - SteviaLayout
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Moya
+    - SteviaLayout
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  SteviaLayout: 05424e528d643657d39ce72c786e4adf13cfc5f2
 
-PODFILE CHECKSUM: 8ecc2034e68b6de1b88ef09f045963bcd59f37f5
+PODFILE CHECKSUM: d6eab4da57d826e5fb12d0644056a1519fe1dbc9
 
 COCOAPODS: 1.11.3

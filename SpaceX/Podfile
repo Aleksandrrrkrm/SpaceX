@@ -7,5 +7,6 @@ target 'SpaceX' do
 
   # Pods for SpaceX
 	pod 'Moya', '~> 15.0'
+	pod 'SteviaLayout'
 
 end

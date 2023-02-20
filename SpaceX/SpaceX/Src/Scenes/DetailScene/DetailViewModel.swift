@@ -6,3 +6,12 @@
 //
 
 import UIKit
+
+protocol DetailViewModelProtocol {
+    
+}
+
+final class DetailViewModel: DetailViewModelProtocol {
+    
+    public var coordinator: Coordinator?
+}
