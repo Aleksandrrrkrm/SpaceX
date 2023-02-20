@@ -25,6 +25,7 @@ class MainTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        configureView()
     }
     
     func configureView() {
@@ -33,14 +34,24 @@ class MainTableViewCell: UITableViewCell {
                        flightTitle,
                        statusTitle,
                        dateTitle)
+        layout(
+            100,
+            |-nameTitle-| ~ 80,
+            8,
+            |-statusTitle-| ~ 80,
+            "",
+            |dateTitle| ~ 80,
+            0
+        )
         
     }
 
-    func setupImage(_ data: Main.LaunchDoc) {
+    func setupCell(_ data: Main.LaunchDoc) {
         nameTitle.text = data.name
-//        flightTitle.text = data.cores?.first?.flight
         statusTitle.text = data.success ?? false ? "Success" : "Fail"
         dateTitle.text = data.date_utc
+#if DEBUG
         print(nameTitle.text)
+#endif
     }
 }

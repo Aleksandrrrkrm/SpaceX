@@ -78,7 +78,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
        guard let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()
         }
-        cell.setupImage(self.viewData[indexPath.row])
+        cell.setupCell(self.viewData[indexPath.row])
         return cell
         
     }
