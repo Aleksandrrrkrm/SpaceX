@@ -12,6 +12,7 @@ protocol Coordinator {
     var navigationController: UINavigationController { get set }
     
     func start()
+    func goToDetailPage(_ data: Main.LaunchDoc)
 }
 
 class BaseCoordinator: Coordinator {
@@ -23,13 +24,10 @@ class BaseCoordinator: Coordinator {
     }
     
     func start() {
-#if DEBUG
-        print("start")
-#endif
         goToMainPage()
     }
     
-    func goToMainPage(){
+    func goToMainPage() {
         let mainViewController = MainViewController()
         let mainViewModel = MainViewModel()
         mainViewModel.coordinator = self
@@ -37,11 +35,15 @@ class BaseCoordinator: Coordinator {
         navigationController.pushViewController(mainViewController, animated: true)
     }
     
-    func goToDetailPage(){
+    func goToDetailPage(_ data: Main.LaunchDoc) {
         let detailViewController = DetailViewController()
         let detailViewModel = DetailViewModel.init()
         detailViewModel.coordinator = self
         detailViewController.detailModel = detailViewModel
+        detailViewController.setData(data)
         navigationController.pushViewController(detailViewController, animated: true)
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.isTranslucent = true
     }
 }

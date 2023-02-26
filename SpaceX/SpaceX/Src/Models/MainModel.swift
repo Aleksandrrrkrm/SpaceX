@@ -13,6 +13,7 @@ enum Main {
     case loading([LaunchDoc]?)
     case success([LaunchDoc]?)
     case failure([LaunchDoc]?)
+    case crewSuccess([CrewModel]?)
     
     // MARK: - LaunchModel
     struct LaunchModel: Decodable {
@@ -95,4 +96,19 @@ enum Main {
         var media: String?
         var recovery: String?
     }
+    
+    struct CrewModel: Decodable {
+        let name, agency: String
+        let image: String
+        let wikipedia: String
+        let launches: [String]
+        let status: Status
+        let id: String
+    }
+
+    enum Status: String, Codable {
+        case active = "active"
+    }
+
+    typealias CrewElementModel = [CrewModel]
 }

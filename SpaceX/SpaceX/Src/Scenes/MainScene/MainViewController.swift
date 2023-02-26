@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Stevia
 
 class MainViewController: UIViewController {
     
@@ -23,10 +24,21 @@ class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        view.backgroundColor = .blue
-        
         updateView()
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.title = "SpaceX"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationItem.title = ""
     }
     
     func setupTableView() {
@@ -47,16 +59,17 @@ class MainViewController: UIViewController {
                 guard let data = data else {
                     return
                 }
-                self?.viewData = data
+                data.forEach { data in
+                    self?.viewData.append(data)
+                }
                 self?.tableView.reloadData()
-#if DEBUG
-                print(self?.viewData.first?.name ?? "errorMainVC")
-#endif
             case .initial:
                 break
             case .failure( _):
                 break
             case .loading( _):
+                break
+            case .crewSuccess(_):
                 break
             }
         }
@@ -70,7 +83,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewData.count
+        viewModel?.jsonData.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,9 +91,27 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
        guard let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()
         }
-        cell.setupCell(self.viewData[indexPath.row])
+        guard let data = viewModel?.jsonData else {
+            return cell
+        }
+        cell.setupCell(data[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
+        guard let data = viewModel?.jsonData else {
+            return
+        }
+        
+        if indexPath.row == data.count - 1 {
+            viewModel?.getNextPage()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.goToDetail(indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
