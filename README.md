@@ -18,3 +18,5 @@
 - Добавить широкую обработку ошибок
 - Pull to Refresh 
 - На самом деле поработал бы над дизайном
+
+![Detail Scene]https://github.com/Aleksandrrrkrm/SpaceX/blob/main/Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20-%202023-02-27%20at%2014.15.08.png
