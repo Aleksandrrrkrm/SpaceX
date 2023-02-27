@@ -10,12 +10,14 @@ import Stevia
 
 class MainViewController: UIViewController {
     
+    // MARK: - Properties
     var tableView = UITableView()
     var viewData: [Main.LaunchDoc] = []
     var viewModel: MainViewModelProtocol?
     var activityIndicator = UIActivityIndicatorView()
     var dialogMessage = UIAlertController(title: "Error", message: "Check your internet connection.", preferredStyle: .alert)
 
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +41,7 @@ class MainViewController: UIViewController {
         self.navigationItem.title = ""
     }
     
+    // MARK: - UIView
     private func setupTableView() {
         view.subviews(tableView)
         tableView.delegate = self
@@ -59,6 +62,7 @@ class MainViewController: UIViewController {
         dialogMessage.addAction(ok)
     }
     
+    // MARK: - Usage
     private func updateView() {
         viewModel?.updateViewData = { [weak self] viewData in
             guard let view = self else {
@@ -85,6 +89,7 @@ class MainViewController: UIViewController {
     }
 }
 
+// MARK: - Extension
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

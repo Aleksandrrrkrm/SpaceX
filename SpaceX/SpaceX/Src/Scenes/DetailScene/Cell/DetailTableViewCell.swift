@@ -10,6 +10,7 @@ import Stevia
 
 class DetailTableViewCell: UITableViewCell {
     
+    // MARK: - Properties
     var iconView = ImageLoader()
     var fullNameLabel = UILabel()
     var agencyLabel = UILabel()
@@ -30,6 +31,7 @@ class DetailTableViewCell: UITableViewCell {
         configureApperiance()
     }
     
+    // MARK: - Setup Cell
     func setupCell(_ data: Main.CrewModel) {
         if let url = URL(string: data.image) {
             iconView.loadImageWithUrl(url)
@@ -44,6 +46,7 @@ class DetailTableViewCell: UITableViewCell {
         }
     }
 
+    // MARK: - UIView
     private func setupView() {
         contentView.subviews(iconView,
                              fullNameLabel,

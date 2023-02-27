@@ -20,6 +20,7 @@ protocol MainViewModelProtocol {
 
 final class MainViewModel: MainViewModelProtocol {
     
+    // MARK: - Properties
     public var coordinator: Coordinator?
     public var updateViewData: ((Main) -> ())?
     public var data: Main.LaunchModel?
@@ -27,10 +28,12 @@ final class MainViewModel: MainViewModelProtocol {
     
     private let provider = MoyaProvider<ApiClient>()
     
+    // MARK: - Life Cycle
     public func viewDidLoad() {
         startFetch(1)
     }
     
+    // MARK: - Usage
     public func getNextPage() {
         guard let currentPage = data?.page,
               let nextPage = data?.nextPage else {
@@ -46,6 +49,7 @@ final class MainViewModel: MainViewModelProtocol {
         coordinator?.goToDetailPage(currentLaunch)
     }
     
+    // MARK: - Request
     private func startFetch(_ page: Int) {
         provider.request(.getData(page: page)) { result in
             switch result {

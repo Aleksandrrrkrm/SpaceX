@@ -18,6 +18,7 @@ protocol DetailViewModelProtocol {
 
 final class DetailViewModel: DetailViewModelProtocol {
     
+    // MARK: - Properties
     public var coordinator: Coordinator?
     public var updateViewData: ((Main) -> ())?
     
@@ -27,6 +28,7 @@ final class DetailViewModel: DetailViewModelProtocol {
     var allID: [Main.CrewModel] = []
     var currentCrew: [Main.CrewModel] = []
     
+    // MARK: - Usage
     public func getCrew(_ crew: [String]) {
         startFetch()
         crew.forEach { crew in
@@ -34,6 +36,7 @@ final class DetailViewModel: DetailViewModelProtocol {
         }
     }
     
+    // MARK: - Request
     private func startFetch() {
         provider.request(.getDetailInfo) { result in
             switch result {

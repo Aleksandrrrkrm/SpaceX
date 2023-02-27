@@ -10,6 +10,7 @@ import Stevia
 
 final class MainTableViewCell: UITableViewCell {
     
+    // MARK: - Properties
     var baseView = UIView()
     var iconView = ImageLoader()
     var descriptionView = UIView()
@@ -36,6 +37,7 @@ final class MainTableViewCell: UITableViewCell {
         iconView.image = nil
     }
     
+    // MARK: - UIView
     private  func configureLayout() {
         contentView.subviews(baseView.subviews(iconView,
                                                statusTitle,
@@ -70,7 +72,7 @@ final class MainTableViewCell: UITableViewCell {
             16
         )
     }
-    
+
     private func configureApperiance() {
         descriptionView.style { view in
             view.backgroundColor = UIColor(named: "appMainBlue")
@@ -133,6 +135,7 @@ final class MainTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: - Setup Cell
     public func setupCell(_ data: Main.LaunchDoc) {
         nameTitle.text = data.name
         statusTitle.isSuccess = data.success ?? false
