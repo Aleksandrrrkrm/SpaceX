@@ -134,14 +134,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		C2CC2F6329A628CE00B363C8 /* VeiwExtensoins */ = {
+		C2CC2F6329A628CE00B363C8 /* ViewExtensoins */ = {
 			isa = PBXGroup;
 			children = (
 				C2CC2F6629A6294100B363C8 /* StatusLabel.swift */,
 				C2F3701929ACA28A00145DAE /* DateFormats.swift */,
 				C2F3701D29ACCA0000145DAE /* BaseView.swift */,
 			);
-			path = VeiwExtensoins;
+			path = ViewExtensoins;
 			sourceTree = "<group>";
 		};
 		C2F16940299D2E2100ED0187 /* Src */ = {
@@ -159,7 +159,7 @@
 		C2F16941299D2E2A00ED0187 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				C2CC2F6329A628CE00B363C8 /* VeiwExtensoins */,
+				C2CC2F6329A628CE00B363C8 /* ViewExtensoins */,
 				C29AE0A329A230B100BD04E9 /* Coordinators */,
 				C2F16943299D2E9E00ED0187 /* MainScene */,
 				C2F16944299D2EA700ED0187 /* DetailScene */,
