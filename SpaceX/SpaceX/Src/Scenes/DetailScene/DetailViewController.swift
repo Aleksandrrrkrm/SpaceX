@@ -8,10 +8,11 @@
 import UIKit
 import Stevia
 
-class DetailViewController: UIViewController {
+class DetailViewController: BaseView {
 
     var detailModel: DetailViewModelProtocol?
     
+    // MARK: - Properties
     var viewForScroll = UIView()
     var scrollView = UIScrollView()
     var contentView = UIView()
@@ -30,6 +31,7 @@ class DetailViewController: UIViewController {
     var tableView = UITableView()
     var crewTitle = UILabel()
     
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,6 +49,7 @@ class DetailViewController: UIViewController {
         setupNavController()
     }
     
+    // MARK: - Usage
     private func updateView() {
         detailModel?.updateViewData = { [weak self] viewData in
             switch viewData {
@@ -100,6 +103,7 @@ class DetailViewController: UIViewController {
         }
     }
     
+    // MARK: - UIView
     private func setupViews() {
         addViews()
         baseView()
@@ -208,25 +212,18 @@ class DetailViewController: UIViewController {
     }
     
     private func configureAperiance() {
+        configureDetails()
         view.backgroundColor = UIColor(named: "appMainBlue")
         
-        detailsLabel.textColor = .white
-        detailsLabel.font = UIFont(name:"HelveticaNeue", size: 18)
-        detailsLabel.numberOfLines = 0
+        detailsLabel.style { label in
+            label.numberOfLines = 0
+            self.setupLabel(label, .medium)
+        }
         
-        descriptionView.backgroundColor = .black
-        descriptionView.layer.cornerRadius = 40
-        
-        iconView.backgroundColor = .clear
-        imageView.backgroundColor = .clear
-        nameLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 24)
-        flightLabel.textColor = .white
-        nameLabel.textAlignment = .center
-        nameLabel.textColor = .white
-        lowView.backgroundColor = .black
-        viewForScroll.backgroundColor = .clear
-        scrollView.backgroundColor = .clear
-        contentView.backgroundColor = .clear
+        descriptionView.style { view in
+            view.backgroundColor = .black
+            view.layer.cornerRadius = 40
+        }
         
         statusLabel.style { label in
             label.textAlignment = .center
@@ -237,35 +234,57 @@ class DetailViewController: UIViewController {
             label.width(90)
         }
         
-        flightTitle.text = "Reuses of the first stage"
-        flightTitle.textAlignment = .left
-        flightTitle.font = UIFont(name:"HelveticaNeue", size: 16)
-        flightTitle.textColor = .white
+        flightTitle.style { title in
+            title.text = "Reuses of the first stage"
+            title.textAlignment = .left
+            self.setupLabel(title, .low)
+        }
         
-        flightLabel.textAlignment = .right
-        flightLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16)
+        flightLabel.style { label in
+            label.textAlignment = .right
+            self.setupLabel(label, .bold)
+        }
+        
+        dateTitle.style { title in
+            title.text = "Launch date"
+            title.textAlignment = .left
+            self.setupLabel(title, .low)
+        }
+        
+        dateLabel.style { label in
+            label.textAlignment = .right
+            self.setupLabel(label, .bold)
+        }
+        
+        crewTitle.style { view in
+            view.isHidden = true
+            view.textAlignment = .center
+            view.text = "Crew"
+            view.font = UIFont(name:"HelveticaNeue-Bold", size: 20)
+            view.textColor = .white
+        }
+        
+        tableView.style { view in
+            view.isHidden = true
+            view.backgroundColor = .black
+        }
+    }
+    
+    private func configureDetails() {
+        iconView.backgroundColor = .clear
+        imageView.backgroundColor = .clear
+        nameLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 24)
         flightLabel.textColor = .white
-        
-        dateTitle.text = "Launch date"
-        dateTitle.textAlignment = .left
-        dateTitle.font = UIFont(name:"HelveticaNeue", size: 16)
-        dateTitle.textColor = .white
-        
-        dateLabel.textAlignment = .right
-        dateLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16)
-        dateLabel.textColor = .white
-        
-        crewTitle.isHidden = true
-        crewTitle.textAlignment = .center
-        crewTitle.text = "Crew"
-        crewTitle.font = UIFont(name:"HelveticaNeue-Bold", size: 20)
-        crewTitle.textColor = .white
-        
-        tableView.isHidden = true
-        tableView.backgroundColor = .black
+        nameLabel.textAlignment = .center
+        nameLabel.textColor = .white
+        lowView.backgroundColor = .black
+        viewForScroll.backgroundColor = .clear
+        scrollView.backgroundColor = .clear
+        contentView.backgroundColor = .clear
     }
 }
 
+// MARK: - Extension
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
