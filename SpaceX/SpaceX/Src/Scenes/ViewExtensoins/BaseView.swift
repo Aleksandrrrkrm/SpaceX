@@ -19,17 +19,17 @@ class BaseView: UIViewController {
             switch style {
             case .low:
                 label.style { label in
-                    label.font = UIFont(name:"HelveticaNeue", size: 16)
+                    label.font = UIFont(name: "HelveticaNeue", size: 16)
                     label.textColor = .white
                 }
             case .medium:
                 label.style { label in
                     label.textColor = .white
-                    label.font = UIFont(name:"HelveticaNeue", size: 18)
+                    label.font = UIFont(name: "HelveticaNeue", size: 18)
                 }
             case .bold:
                 label.style { label in
-                    label.font = UIFont(name:"HelveticaNeue-Bold", size: 16)
+                    label.font = UIFont(name: "HelveticaNeue-Bold", size: 16)
                     label.textColor = .white
                 }
             }
