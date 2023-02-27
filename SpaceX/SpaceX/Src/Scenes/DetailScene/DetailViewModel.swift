@@ -52,11 +52,9 @@ final class DetailViewModel: DetailViewModelProtocol {
                         print(current)
                         if id.id == current {
                             self.currentCrew.append(id)
-                            print("@@@\(id)")
                         }
                     }
                 }
-                print(self.currentCrew.count)
                 self.updateViewData?(.crewSuccess(self.currentCrew))
                    
             case let .failure(error):

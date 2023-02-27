@@ -27,10 +27,6 @@ final class MainViewModel: MainViewModelProtocol {
     
     private let provider = MoyaProvider<ApiClient>()
     
-    init() {
-        updateViewData?(.initial)
-    }
-    
     public func viewDidLoad() {
         startFetch(1)
     }
@@ -67,6 +63,7 @@ final class MainViewModel: MainViewModelProtocol {
                 
                    
             case let .failure(error):
+                self.updateViewData?(.failure)
 #if DEBUG
                 print(error.localizedDescription)
 #endif

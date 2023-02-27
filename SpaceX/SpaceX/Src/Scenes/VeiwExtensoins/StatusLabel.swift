@@ -7,11 +7,11 @@
 
 import UIKit
 
-class StatusLabel: UILabel {
+final class StatusLabel: UILabel {
 
     var isSuccess: Bool = false {
         didSet {
-            self.backgroundColor = isSuccess ? .green : .red
+            self.backgroundColor = isSuccess ? UIColor(named: "appMainGreen") : UIColor(named: "appMainRed")
             }
         }
     }

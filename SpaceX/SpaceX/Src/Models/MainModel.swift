@@ -8,11 +8,9 @@
 import UIKit
 
 enum Main {
-    
-    case initial
-    case loading([LaunchDoc]?)
+   
     case success([LaunchDoc]?)
-    case failure([LaunchDoc]?)
+    case failure
     case crewSuccess([CrewModel]?)
     
     // MARK: - LaunchModel

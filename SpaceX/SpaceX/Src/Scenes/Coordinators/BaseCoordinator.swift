@@ -15,7 +15,7 @@ protocol Coordinator {
     func goToDetailPage(_ data: Main.LaunchDoc)
 }
 
-class BaseCoordinator: Coordinator {
+final class BaseCoordinator: Coordinator {
 
     var navigationController: UINavigationController
     

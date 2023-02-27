@@ -11,21 +11,19 @@ import Stevia
 class MainViewController: UIViewController {
     
     var tableView = UITableView()
-    
     var viewData: [Main.LaunchDoc] = []
-    
     var viewModel: MainViewModelProtocol?
-    
+    var activityIndicator = UIActivityIndicatorView()
+    var dialogMessage = UIAlertController(title: "Error", message: "Check your internet connection.", preferredStyle: .alert)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel?.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
         
         updateView()
         setupTableView()
+        configureAlert()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,33 +39,44 @@ class MainViewController: UIViewController {
         self.navigationItem.title = ""
     }
     
-    func setupTableView() {
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+    private func setupTableView() {
+        view.subviews(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.register(MainTableViewCell.self, forCellReuseIdentifier: "mainCell")
+        tableView.backgroundView = activityIndicator
+        activityIndicator.startAnimating()
+        
+        view.layout(
+        0,
+        |-0-tableView-0-|,
+        0
+        )
+    }
+    
+    private func configureAlert() {
+        let ok = UIAlertAction(title: "OK", style: .default)
+        dialogMessage.addAction(ok)
     }
     
     private func updateView() {
         viewModel?.updateViewData = { [weak self] viewData in
+            guard let view = self else {
+                return
+            }
             switch viewData {
             case .success(let data):
-                
+                view.activityIndicator.stopAnimating()
                 guard let data = data else {
                     return
                 }
                 data.forEach { data in
-                    self?.viewData.append(data)
+                    view.viewData.append(data)
                 }
                 self?.tableView.reloadData()
-            case .initial:
-                break
-            case .failure( _):
-                break
-            case .loading( _):
+            case .failure:
+                view.present(view.dialogMessage, animated: true, completion: nil)
+                view.activityIndicator.stopAnimating()
                 break
             case .crewSuccess(_):
                 break

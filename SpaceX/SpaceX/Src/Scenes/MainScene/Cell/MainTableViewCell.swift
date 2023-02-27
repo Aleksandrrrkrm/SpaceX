@@ -8,7 +8,7 @@
 import UIKit
 import Stevia
 
-class MainTableViewCell: UITableViewCell {
+final class MainTableViewCell: UITableViewCell {
     
     var baseView = UIView()
     var iconView = ImageLoader()
@@ -26,7 +26,8 @@ class MainTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        configureView()
+        configureLayout()
+        configureApperiance()
     }
     
     override func prepareForReuse() {
@@ -35,7 +36,7 @@ class MainTableViewCell: UITableViewCell {
         iconView.image = nil
     }
     
-    func configureView() {
+    private  func configureLayout() {
         contentView.subviews(baseView.subviews(iconView,
                                                statusTitle,
                                                descriptionView.subviews(nameTitle,
@@ -68,7 +69,9 @@ class MainTableViewCell: UITableViewCell {
             |-12-dateTitle-flightTitle-12-|,
             16
         )
-        
+    }
+    
+    private func configureApperiance() {
         descriptionView.style { view in
             view.backgroundColor = UIColor(named: "appMainBlue")
             view.layer.shadowColor = UIColor.black.cgColor
@@ -129,25 +132,33 @@ class MainTableViewCell: UITableViewCell {
             image.clipsToBounds = true
         }
     }
+    
+    public func setupCell(_ data: Main.LaunchDoc) {
+        nameTitle.text = data.name
+        statusTitle.isSuccess = data.success ?? false
+        statusTitle.text = data.success ?? false ? "Success" : "Fail"
+    
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = DateFormats.spaceXLaunch
+        if let date = dateFormatter.date(from: data.date_utc ?? "") {
+            let compactDateFormatter = DateFormatter()
+            compactDateFormatter.locale = Locale.current
+            compactDateFormatter.dateFormat = DateFormats.displayDateFormat
+            dateTitle.text = compactDateFormatter.string(from: date)
+        }
         
-        func setupCell(_ data: Main.LaunchDoc) {
-            nameTitle.text = data.name
-            statusTitle.isSuccess = data.success ?? false
-            statusTitle.text = data.success ?? false ? "Success" : "Fail"
-            
-            
-            dateTitle.text = data.date_utc
-            if let url = URL(string: data.links?.patch?.small ?? "") {
-                iconView.loadImageWithUrl(url)
-            } else {
-                iconView.image = UIImage(named: "placeholder")
-            }
-            
-            if let flights = data.cores?.first?.flight {
-                flightTitle.text = String(flights)
-            } else {
-                flightTitle.text = "0"
-            }
+        if let url = URL(string: data.links?.patch?.small ?? "") {
+            iconView.loadImageWithUrl(url)
+        } else {
+            iconView.image = UIImage(named: "placeholder")
+        }
+        
+        if let flights = data.cores?.first?.flight {
+            flightTitle.text = String(flights)
+        } else {
+            flightTitle.text = "0"
         }
     }
+}
 

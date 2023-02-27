@@ -52,17 +52,9 @@ class DetailViewController: UIViewController {
             switch viewData {
             case .success:
                 break
-            case .initial:
-                break
             case .failure:
                 break
-            case .loading:
-                break
-            case .crewSuccess(let data):
-                guard let data = data else {
-                    return
-                }
-                print(data.first?.name)
+            case .crewSuccess(_):
                 self?.crewTitle.isHidden = false
                 self?.tableView.isHidden = false
                 self?.tableView.reloadData()
@@ -84,7 +76,17 @@ class DetailViewController: UIViewController {
             detailModel?.getCrew(crew)
         }
         detailsLabel.text = data.details
-        dateLabel.text = data.date_utc
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = DateFormats.spaceXLaunch
+        if let date = dateFormatter.date(from: data.date_utc ?? "") {
+            let compactDateFormatter = DateFormatter()
+            compactDateFormatter.locale = Locale.current
+            compactDateFormatter.dateFormat = DateFormats.spaceXRocketFirstLaunch
+            dateLabel.text = compactDateFormatter.string(from: date)
+        }
+        
         nameLabel.text = data.name
         statusLabel.text = data.success ?? false ? "Success" : "Fail"
         statusLabel.isSuccess = data.success ?? false
@@ -211,10 +213,6 @@ class DetailViewController: UIViewController {
         detailsLabel.textColor = .white
         detailsLabel.font = UIFont(name:"HelveticaNeue", size: 18)
         detailsLabel.numberOfLines = 0
-//        detailsLabel.layer.shadowColor = UIColor.white.cgColor
-//        detailsLabel.layer.shadowOpacity = 1
-//        detailsLabel.layer.shadowOffset = .zero
-//        detailsLabel.layer.shadowRadius = 4
         
         descriptionView.backgroundColor = .black
         descriptionView.layer.cornerRadius = 40

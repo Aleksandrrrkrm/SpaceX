@@ -22,6 +22,7 @@
 		C2F16947299D2F8B00ED0187 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F16946299D2F8B00ED0187 /* MainViewModel.swift */; };
 		C2F16949299D2FC900ED0187 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F16948299D2FC900ED0187 /* DetailViewController.swift */; };
 		C2F1694B299D2FDE00ED0187 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1694A299D2FDE00ED0187 /* DetailViewModel.swift */; };
+		C2F3701A29ACA28A00145DAE /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F3701929ACA28A00145DAE /* DateFormats.swift */; };
 		D99E95E0D5CF3DEDFC0217BB /* Pods_SpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA6B52B8CBA8800C9D605EF /* Pods_SpaceX.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		C2F16946299D2F8B00ED0187 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		C2F16948299D2FC900ED0187 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C2F1694A299D2FDE00ED0187 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		C2F3701929ACA28A00145DAE /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
 		DEA6B52B8CBA8800C9D605EF /* Pods_SpaceX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				C2CC2F6629A6294100B363C8 /* StatusLabel.swift */,
+				C2F3701929ACA28A00145DAE /* DateFormats.swift */,
 			);
 			path = VeiwExtensoins;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				C2B66071299BDBA500BD47D4 /* SpaceX.xcdatamodeld in Sources */,
 				C29AE0A529A2332900BD04E9 /* BaseCoordinator.swift in Sources */,
 				C2CC2F6729A6294100B363C8 /* StatusLabel.swift in Sources */,
+				C2F3701A29ACA28A00145DAE /* DateFormats.swift in Sources */,
 				C2E885C8299E3A1000ED8E2B /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
