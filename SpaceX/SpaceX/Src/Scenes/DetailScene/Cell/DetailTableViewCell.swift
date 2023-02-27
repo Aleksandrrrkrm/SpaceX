@@ -80,19 +80,19 @@ class DetailTableViewCell: UITableViewCell {
         
         fullNameLabel.style { label in
             label.textAlignment = .right
-            label.font = UIFont(name:"HelveticaNeue-Bold", size: 14)
+            label.font = UIFont(name: AppFont.bold.rawValue, size: 14)
             label.textColor = .white
         }
         
         statusLabel.style { label in
             label.textAlignment = .right
-            label.font = UIFont(name:"HelveticaNeue-Bold", size: 14)
+            label.font = UIFont(name: AppFont.bold.rawValue, size: 14)
             label.textColor = .white
         }
         
         agencyLabel.style { label in
             label.textAlignment = .right
-            label.font = UIFont(name:"HelveticaNeue-Bold", size: 14)
+            label.font = UIFont(name: AppFont.bold.rawValue, size: 14)
             label.textColor = .white
         }
     }

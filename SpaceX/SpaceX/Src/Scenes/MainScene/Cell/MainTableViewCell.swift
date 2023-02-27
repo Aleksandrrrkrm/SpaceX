@@ -93,7 +93,7 @@ final class MainTableViewCell: UITableViewCell {
             label.textAlignment = .center
             label.backgroundColor = .clear
             label.textColor = .white
-            label.font = UIFont(name:"HelveticaNeue-Bold", size: 20)
+            label.font = UIFont(name: AppFont.bold.rawValue, size: 20)
             
             label.layer.shadowColor = UIColor.white.cgColor
             label.layer.shadowOpacity = 1
@@ -139,7 +139,7 @@ final class MainTableViewCell: UITableViewCell {
     public func setupCell(_ data: Main.LaunchDoc) {
         nameTitle.text = data.name
         statusTitle.isSuccess = data.success ?? false
-        statusTitle.text = data.success ?? false ? "Success" : "Fail"
+        statusTitle.text = data.success ?? false ? Status.success.rawValue : Status.fail.rawValue
     
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current

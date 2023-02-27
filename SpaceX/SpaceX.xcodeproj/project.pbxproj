@@ -24,6 +24,7 @@
 		C2F1694B299D2FDE00ED0187 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1694A299D2FDE00ED0187 /* DetailViewModel.swift */; };
 		C2F3701A29ACA28A00145DAE /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F3701929ACA28A00145DAE /* DateFormats.swift */; };
 		C2F3702229ACDA5300145DAE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F3702129ACDA5300145DAE /* BaseView.swift */; };
+		C2F3702429ACDB8C00145DAE /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F3702329ACDB8C00145DAE /* Strings.swift */; };
 		D99E95E0D5CF3DEDFC0217BB /* Pods_SpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA6B52B8CBA8800C9D605EF /* Pods_SpaceX.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		C2F1694A299D2FDE00ED0187 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		C2F3701929ACA28A00145DAE /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
 		C2F3702129ACDA5300145DAE /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		C2F3702329ACDB8C00145DAE /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = ../../../../../../../.Trash/SpaceX/SpaceX/SpaceX/Src/Resources/Strings.swift; sourceTree = "<group>"; };
 		DEA6B52B8CBA8800C9D605EF /* Pods_SpaceX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				C2B66072299BDBA600BD47D4 /* Assets.xcassets */,
+				C2F3702329ACDB8C00145DAE /* Strings.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			files = (
 				C25BA60C29A3BB7400467E36 /* MainTableViewCell.swift in Sources */,
 				C2E885C4299E1E0E00ED8E2B /* MainModel.swift in Sources */,
+				C2F3702429ACDB8C00145DAE /* Strings.swift in Sources */,
 				C29443CD29A4EF5F00113E3A /* ImageLoader.swift in Sources */,
 				C2B74C4C29ABAFFD002B597A /* DetailTableViewCell.swift in Sources */,
 				C2F16947299D2F8B00ED0187 /* MainViewModel.swift in Sources */,

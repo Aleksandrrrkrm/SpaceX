@@ -50,9 +50,7 @@ final class DetailViewModel: DetailViewModelProtocol {
                     self.allID.append(crew)
                 }
                 for id in self.allID {
-                    print(id.id)
                     for current in self.currentID {
-                        print(current)
                         if id.id == current {
                             self.currentCrew.append(id)
                         }

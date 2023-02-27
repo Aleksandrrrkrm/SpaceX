@@ -40,7 +40,7 @@ class DetailViewController: BaseView {
         updateView()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(DetailTableViewCell.self, forCellReuseIdentifier: "detailCell")
+        tableView.register(DetailTableViewCell.self, forCellReuseIdentifier: Cells.detail.rawValue)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +91,7 @@ class DetailViewController: BaseView {
         }
         
         nameLabel.text = data.name
-        statusLabel.text = data.success ?? false ? "Success" : "Fail"
+        statusLabel.text = data.success ?? false ? Status.success.rawValue : Status.fail.rawValue
         statusLabel.isSuccess = data.success ?? false
         if let url = URL(string: data.links?.patch?.small ?? "") {
             iconView.loadImageWithUrl(url)
@@ -260,7 +260,7 @@ class DetailViewController: BaseView {
             view.isHidden = true
             view.textAlignment = .center
             view.text = "Crew"
-            view.font = UIFont(name:"HelveticaNeue-Bold", size: 20)
+            view.font = UIFont(name: AppFont.bold.rawValue, size: 20)
             view.textColor = .white
         }
         
@@ -273,7 +273,7 @@ class DetailViewController: BaseView {
     private func configureDetails() {
         iconView.backgroundColor = .clear
         imageView.backgroundColor = .clear
-        nameLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 24)
+        nameLabel.font = UIFont(name: AppFont.bold.rawValue, size: 24)
         flightLabel.textColor = .white
         nameLabel.textAlignment = .center
         nameLabel.textColor = .white
@@ -296,7 +296,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       guard let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? DetailTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.detail.rawValue, for: indexPath) as? DetailTableViewCell else {
             return UITableViewCell()
         }
         guard let data = detailModel?.currentCrew else {

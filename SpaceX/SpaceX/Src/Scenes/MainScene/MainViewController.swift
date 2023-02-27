@@ -46,7 +46,7 @@ class MainViewController: UIViewController {
         view.subviews(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: "mainCell")
+        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: Cells.main.rawValue)
         tableView.backgroundView = activityIndicator
         activityIndicator.startAnimating()
         
@@ -102,7 +102,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       guard let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath) as? MainTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.main.rawValue, for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()
         }
         guard let data = viewModel?.jsonData else {
